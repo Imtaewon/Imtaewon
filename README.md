@@ -296,14 +296,6 @@
 - 일일/주간/월간 퀘스트 리셋 메커니즘 (period_key 활용)
 - 학교별 리더보드 실시간 집계 (total_exp, avg_exp, rank)
 
-### 추천 시스템 개발 ⭐⭐⭐⭐
-- 하이브리드 추천 알고리즘 구현 (Cold Start → Collaborative Filtering + Content-Based)
-- 설문 기반 초기 추천 (사용자 선호도 분석)
-- 클릭률, 완료율 기반 추천 정확도 개선
-- 다양성 보장 알고리즘 (카테고리별 분산 추천)
-- Numpy 기반 수치 계산 및 유사도 분석
-- 추천 이력 추적 (QuestRecommendation, QuestRecoInteraction)
-
 ### RESTful API 설계 ⭐⭐⭐⭐⭐
 - REST 원칙 준수 API 엔드포인트 설계
 - 명확한 HTTP 메서드 사용 (GET, POST, PATCH, DELETE)
