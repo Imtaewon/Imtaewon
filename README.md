@@ -350,12 +350,11 @@
 
 ### 백엔드 프레임워크
 - **FastAPI**: 비동기 REST API 서버, Pydantic 검증, OpenAPI 자동 문서화
-- **SQLAlchemy**: ORM 설계, 복잡한 관계 매핑, 마이그레이션
+- **SQLAlchemy**: ORM 설계, 복잡한 관계 매핑
 - **Spring Boot**: 엔터프라이즈 백엔드 아키텍처 이해 (Dollar Insight 프로젝트)
 
 ### 상태 관리
 - **Zustand**: 경량 상태 관리, AsyncStorage 연동
-- **Redux Toolkit**: 복잡한 상태 관리 대안
 
 ### 실시간 통신
 - **WebSocket**: 양방향 실시간 통신, Heartbeat, 자동 재연결
