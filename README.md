@@ -29,41 +29,235 @@
 ---
 
 ## ⚒️ Tech Skills
+## FIK@SSAFY
+**역할: 프론트엔드 채팅 시스템 구현 및 관리자 페이지 제작**
 
-**FastAPI** ⭐⭐⭐⭐
-- Dependency Injection을 활용한 계층 분리
-- SQLAlchemy ORM을 통한 복잡한 서브쿼리 최적화
-- JWT + Redis 기반 인증 시스템 구축
-- httpx를 활용한 외부 API 비동기 연동까지 end-to-end 구현 경험험
+### React ⭐⭐⭐⭐⭐
+- Vite 빌드 시스템을 활용한 최신 React 19 개발 환경 구축
+- 68개의 컴포넌트를 체계적으로 구조화한 대규모 SPA 개발
+- Custom Hooks(useWebSocket.js)를 활용한 로직 재사용성 극대화
+- Provider 패턴과 Context API를 통한 전역 상태 관리
 
-**React** ⭐⭐⭐⭐
+### WebSocket ⭐⭐⭐⭐⭐
+- Singleton 패턴 기반 WebSocket 서비스 설계 및 구현
+- 자동 재연결, Heartbeat(30s PING/90s PONG) 메커니즘 구현
+- 다중 메시지 타입 핸들링 (MESSAGE, JOIN_ROOM, LEAVE_ROOM, TYPING, READ)
+- 실시간 알림, 타이핑 인디케이터, 읽음 표시 등 UX 중심 기능 구현
+- Redis Pub/Sub과 연동한 수평 확장 가능한 채팅 아키텍처 이해
 
-- WebSocket 기반 실시간 UI 구현
-- 컴포넌트 모듈화를 통한 12개 채팅 관련 컴포넌트 설계
-- 메모이제이션과 가상화 스크롤링을 활용한 성능 최적화
-- Zustand를 통한 전역 상태 관리
+### Zustand ⭐⭐⭐⭐
+- 경량 상태 관리 라이브러리로 authStore, chatRoomStore, notificationStore 구현
+- Redux Toolkit 대비 boilerplate 최소화 및 성능 최적화
+- Immutable 업데이트 패턴 적용으로 안정적인 상태 관리
 
-**JavaScript** ⭐⭐⭐
-- WebSocket 이벤트 핸들러 및 다채로운 메시지 타입을 동적 객체로 설계·처리
-- 복잡한 채팅 메시지 구조도 JS 객체와 동적 필드 관리로 유연하게 구현
-- React에서 Props 전송 및 컴포넌트 연결에 능숙, 런타임 데이터 흐름 제어에 강점
-- 코드 실행 과정과 비동기 이벤트 처리에 집중하며, 정적 타입보다 동적 구조와 실행 흐름 최적화에 경험이 많음
+### CSS & Tailwind CSS ⭐⭐⭐⭐
+- Tailwind CSS를 활용한 유틸리티 우선 스타일링
+- 반응형 레이아웃 및 컴포넌트별 스타일 모듈화
+- 관리자 페이지 UI/UX 설계 및 구현 (탭 기반 인터페이스, CRUD 폼)
 
-**Docker & 인프라** ⭐⭐⭐⭐
-- Docker Compose로 9개 마이크로서비스 오케스트레이션
-- Jenkins CI/CD 파이프라인 구축 및 자동 배포
-- Nginx 리버스 프록시 설정 및 SSL 적용
-- AWS EC2 인프라 관리 및 모니터링 시스템 구축
+### Axios ⭐⭐⭐⭐
+- 9개의 API 서비스 모듈 설계 (chatAPI, userAPI, coffeeChatAPI, quizAPI 등)
+- Interceptor를 활용한 인증 토큰 자동 주입 및 에러 핸들링
+- RESTful API 연동 및 비동기 데이터 플로우 관리
 
-**WebSocket 통신** ⭐⭐
-- 연결 상태 관리(CONNECTING, CONNECTED, RECONNECTING, DISCONNECTED)
-- 자동 재연결 로직
-- 하트비트 메커니즘
-- 토큰 만료 시 자동 처리까지 구현했지만 대용량 트래픽 처리나 클러스터링은 경험 부족
+### 관리자 페이지 구현 경험 ⭐⭐⭐⭐
+- EventManagement, MenuManagement, CoffeeChatMatching, NoticeManagement 컴포넌트 개발
+- 몬테카르로 매칭 알고리즘 UI 구현 (필터링, 그룹화 미리보기, 최종 확정)
+- CRUD 연산, 페이지네이션, 검색 필터링 등 관리자 기능 전반 구현
 
-**MySQL & Redis** ⭐
-- 기본적인 CRUD 작업과 인덱스 설정
-- Redis Set을 활용한 블랙리스트 처리는 가능하지만 대용량 데이터 파티셔닝이나 성능 튜닝은 더 경험 필요
+---
+
+## WEATHEREVER
+**역할: 프론트엔드 전담 (Figma UI/UX, React Native)**
+
+### React Native ⭐⭐⭐⭐⭐
+- Expo SDK 54 + React Native 0.81 기반 크로스 플랫폼 앱 개발
+- Atomic Design 패턴 적용 (41개 컴포넌트: Atoms 21, Molecules 16, Organisms 4)
+- iOS/Android/Web 동시 지원 및 플랫폼별 최적화
+- SafeAreaView, Platform API를 활용한 네이티브 UX 구현
+
+### Figma UI/UX 설계 및 구현 ⭐⭐⭐⭐⭐
+- Figma 디자인 시스템 기반 픽셀 퍼펙트 UI 구현 (440px × 957px 레이아웃)
+- 중앙 집중식 테마 시스템 (theme.ts) 설계: 18개 색상, 타이포그래피, 스페이싱, 그라데이션
+- Pretendard 폰트 9개 웨이트 적용 및 일관된 타이포그래피 시스템 구축
+- 디자인 토큰 기반 유지보수성 높은 스타일 관리
+
+### TypeScript ⭐⭐⭐⭐
+- Strict 모드 활성화로 타입 안전성 확보
+- 3개 타입 정의 파일로 도메인 모델 명확화 (LocationData, WeatherData, UserApiData 등)
+- JSON 직렬화를 위한 json_annotation 기반 코드 제너레이션
+
+### Expo 생태계 ⭐⭐⭐⭐⭐
+- expo-location: GPS 기반 위치 추적 및 권한 관리
+- expo-av, expo-video: 캐릭터 애니메이션 멀티미디어 처리
+- expo-font: 커스텀 폰트 로딩 및 관리
+- expo-status-bar: 상태바 스타일링
+
+### Zustand 상태 관리 ⭐⭐⭐⭐
+- appStore (14.3KB): 날씨, 위치, 사용자, API 동기화 상태 통합 관리
+- characterStore: AsyncStorage 기반 캐릭터 상태 지속성
+- Pending changes queue 구현으로 오프라인 지원
+
+### 위치 기반 서비스 ⭐⭐⭐⭐
+- GPS 자동 위치 감지 및 수동 검색 듀얼 시스템
+- Nominatim(OpenStreetMap) + Google Places 이중 지오코딩 fallback 구현
+- Expo SDK 49 breaking change 대응 (reverseGeocodeAsync 제거 → 커스텀 구현)
+- 디바운스 검색, 위치 캐싱으로 성능 최적화
+
+### Custom Hooks 설계 ⭐⭐⭐⭐
+- useLocation: 위치 추적 및 캐싱 로직 캡슐화
+- useLocationSearch: 자동완성 검색 로직
+- useDeviceLayout: 반응형 레이아웃 계산
+- useLocationPermission: 권한 상태 관리
+- 로직 재사용성과 테스트 가능성 향상
+
+### API 통합 ⭐⭐⭐⭐
+- 12개 서비스 레이어 모듈 설계 (weatherService, userApiService, locationService 등)
+- Dio 기반 HTTP 클라이언트 구성 (타임아웃, 인터셉터, 에러 핸들링)
+- RESTful API 연동 및 비동기 데이터 플로우 관리
+
+### 애니메이션 & 미디어 처리 ⭐⭐⭐
+- GIF 기반 캐릭터 애니메이션 시스템 (react-native-video → expo-av → GIF 진화)
+- 날씨 조건별 애니메이션 표시 (clouds.gif, rain.gif, snow.gif)
+- 크로스 플랫폼 호환성을 고려한 미디어 포맷 선택
+
+---
+
+## Dollar Insight
+**역할: 인프라 전담 (Docker, Jenkins, Nginx 등) + 프론트엔드 API 연결 및 채팅 시스템 구현**
+
+### Docker & Docker Compose ⭐⭐⭐⭐⭐
+- 14개 서비스 멀티 컨테이너 오케스트레이션 설계 및 구현
+- 서비스 계층 분리: 데이터베이스(보존) / 애플리케이션(업데이트) / 모니터링
+- Health Check 기반 의존성 관리 및 자동 재시작
+- Named Volume을 통한 데이터 영속성 보장 (postgres_data, mongodb_data, redis_data, chromadb_data)
+- 멀티 스테이지 빌드로 이미지 크기 최적화 (gradle:8.5-jdk21 → eclipse-temurin:21-jre-alpine)
+- 커스텀 브리지 네트워크(172.20.0.0/16)로 서비스 간 DNS 통신
+
+### Jenkins CI/CD ⭐⭐⭐⭐⭐
+- Declarative Pipeline(Groovy DSL)으로 8단계 자동화 파이프라인 구축
+- Git Webhook 연동 및 자동 빌드 트리거
+- 3개 서비스 Docker 이미지 빌드 및 Docker Hub Registry 푸시
+- SSH 기반 EC2 원격 배포 자동화
+- 버전 태깅 전략: `<commit-hash-7chars>-<build-number>` + `latest` 태그
+- 배포 검증 (health check) 및 실패 시 자동 로그 수집
+- 24시간 기준 이미지 정리로 디스크 공간 관리
+
+### Nginx ⭐⭐⭐⭐⭐
+- 리버스 프록시 및 로드 밸런서 역할 수행
+- SSL/TLS 종단점 처리 (Let's Encrypt 인증서, HTTP → HTTPS 301 리다이렉트)
+- Rate Limiting: 10r/s (일반), 30r/s (API) 정책 적용으로 DDoS 방어
+- SSE(Server-Sent Events) 특수 처리 (10분 타임아웃, 버퍼링 비활성화)
+- Gzip 압축, HTTP/2, WebSocket 프록시 지원
+- 보안 헤더 설정 (HSTS, X-Frame-Options, CSP, nosniff)
+- 정적 파일 서빙 (APK 다운로드, 적절한 MIME 타입 및 Content-Disposition)
+- 3개 관리 도구 프록시 (pgAdmin, Mongo Express, Redis Commander)
+
+### Bash 스크립팅 ⭐⭐⭐⭐⭐
+- deploy.sh (2697라인): 배포 자동화 마스터 스크립트 작성
+- 35+ 함수 모듈화로 재사용성 및 유지보수성 확보
+- 배포 모드: deploy(앱만 업데이트), deploy-all(전체), rollback(복구)
+- 백업 관리 (최대 5개 유지, 타임스탬프 기반)
+- Health Check 자동화 (30회 재시도, 10초 간격)
+- 색상 코딩된 출력으로 사용자 경험 개선
+- Flutter APK 빌드 및 배포 통합 (build-apk, deploy-apk)
+- 서비스별 로그 조회, 상태 확인, 클린업 기능 제공
+
+### Prometheus & Grafana ⭐⭐⭐⭐
+- Prometheus 메트릭 수집 인프라 구축 (15초 스크랩 주기)
+- 4개 타겟 모니터링: Backend(Actuator), AI Service, cAdvisor, Prometheus 자체
+- Grafana 대시보드 연동 및 실시간 시각화
+- cAdvisor로 컨테이너별 리소스 사용량 추적 (CPU, 메모리, 네트워크, I/O)
+- Spring Boot Actuator 메트릭 (JVM heap, GC, HTTP 요청률/지연)
+
+### 데이터베이스 관리 ⭐⭐⭐⭐
+- PostgreSQL 15: 사용자, 인증, 세션 메타데이터 관리
+- MongoDB 7: 채팅 메시지, 뉴스 데이터 스토리지
+- Redis 7: 캐시, 메시지 브로커, 실시간 데이터
+- ChromaDB: RAG를 위한 벡터 데이터베이스
+- 각 DB별 Health Check 및 데이터 영속성 보장
+- 관리 도구 통합 (pgAdmin, Mongo Express, Redis Commander)
+
+### Flutter API 연동 ⭐⭐⭐⭐
+- Dio 기반 ApiClient 구현 (Interceptor, 토큰 자동 주입, 401 리프레시 로직)
+- ChatApi 래퍼 클래스로 10개 채팅 엔드포인트 통합 관리
+- SSE 스트리밍용 Dio 인스턴스 별도 구성
+- Header 관리: Authorization, X-Device-Id, Last-Event-ID
+- 에러 핸들링: ChatApiException 커스텀 예외 체계
+
+### SSE(Server-Sent Events) 채팅 시스템 ⭐⭐⭐⭐⭐
+- 3계층 실시간 스트리밍 아키텍처: Flutter ↔ Spring Boot ↔ FastAPI
+- 세션 생성, 메시지 전송, 스트림 제어(중단/재개/속도 조절) 구현
+- Last-Event-ID 기반 재연결 복구 메커니즘
+- 10분 장시간 연결 처리 (Nginx 타임아웃 설정)
+- 커서 기반 페이지네이션으로 무한 스크롤 히스토리 구현
+
+### Linux & AWS EC2 ⭐⭐⭐⭐
+- Ubuntu 22.04 LTS 서버 관리
+- SSH 키 기반 인증 및 보안 설정
+- `/opt/S13P31B205` 배포 디렉토리 구조 설계
+- 방화벽, 포트 포워딩, 네트워크 설정
+- 로그 관리 및 디스크 공간 모니터링
+
+### SSL/TLS & 보안 ⭐⭐⭐⭐
+- Let's Encrypt 인증서 자동 갱신 설정
+- TLS 1.2/1.3 프로토콜 및 모던 암호화 스위트 적용
+- HSTS 1년 정책, X-Frame-Options, CSP 헤더 설정
+- Rate Limiting, Request Size Limit으로 보안 강화
+- 컨테이너 비root 실행 (appuser, spring 사용자)
+
+### Git & 버전 관리 ⭐⭐⭐⭐
+- GitLab 리포지토리 관리 및 브랜치 전략 (develop 브랜치 배포)
+- 커밋 해시 기반 이미지 버저닝
+- .gitignore 설정 및 .env.template을 통한 시크릿 관리
+
+---
+
+## 종합 기술 역량
+
+### 프론트엔드 프레임워크
+- **React (웹)**: 대규모 SPA 개발, Hooks, Context API, 컴포넌트 설계
+- **React Native (모바일)**: Expo 기반 크로스 플랫폼 앱 개발, Atomic Design 패턴
+
+### 상태 관리
+- **Zustand**: 경량 상태 관리, AsyncStorage 연동
+- **Redux Toolkit**: 복잡한 상태 관리 대안
+
+### 실시간 통신
+- **WebSocket**: 양방향 실시간 통신, Heartbeat, 자동 재연결
+- **SSE**: 단방향 스트리밍, AI 응답 실시간 렌더링, 재연결 복구
+
+### 인프라 & DevOps
+- **Docker**: 멀티 컨테이너 오케스트레이션, 멀티 스테이지 빌드, 네트워크 설계
+- **Jenkins**: CI/CD 파이프라인 구축, 자동화 배포
+- **Nginx**: 리버스 프록시, SSL/TLS, Rate Limiting, SSE 처리
+- **Bash**: 복잡한 배포 스크립트 작성, 에러 핸들링, 백업/복구
+- **AWS EC2**: 클라우드 서버 관리, 보안 설정
+
+### 모니터링 & 로깅
+- **Prometheus**: 메트릭 수집 및 쿼리
+- **Grafana**: 대시보드 시각화
+- **cAdvisor**: 컨테이너 모니터링
+
+### UI/UX 설계
+- **Figma**: 디자인 시스템 구축 및 픽셀 퍼펙트 구현
+- **CSS/Tailwind CSS**: 유틸리티 우선 스타일링, 반응형 디자인
+- **디자인 토큰**: 중앙 집중식 테마 관리
+
+### API & 네트워킹
+- **Axios/Dio**: HTTP 클라이언트, Interceptor, 에러 핸들링
+- **RESTful API**: 설계 및 연동
+- **JWT**: 토큰 기반 인증 및 리프레시 메커니즘
+
+### 데이터베이스
+- **PostgreSQL**: 관계형 데이터 설계
+- **MongoDB**: 도큐먼트 스토리지
+- **Redis**: 캐싱, Pub/Sub
+
+### 개발 도구
+- **Git/GitLab**: 버전 관리, 브랜치 전략
+- **TypeScript**: 타입 안전성, 코드 제너레이션
+- **Vite**: 빌드 최적화
 
 ---
 
