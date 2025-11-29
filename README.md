@@ -211,6 +211,158 @@
 - 커밋 해시 기반 이미지 버저닝
 - .gitignore 설정 및 .env.template을 통한 시크릿 관리
 
+
+## Sol_Sol_Quest
+**역할: 백엔드 전담 + 인프라 (AWS EC2 배포)**
+
+### FastAPI ⭐⭐⭐⭐⭐
+- 비동기 Python 웹 프레임워크로 REST API 서버 구축
+- Uvicorn ASGI 서버로 고성능 비동기 처리
+- Pydantic을 활용한 강력한 요청/응답 검증 시스템
+- 자동 OpenAPI(Swagger) 문서 생성으로 API 문서화 자동화
+- 모듈 기반 라우터 설계 (auth, quests, users, accounts, attendance, recommendations)
+- Dependency Injection 패턴으로 DB 세션 및 인증 관리
+
+### SQLAlchemy ORM ⭐⭐⭐⭐⭐
+- 2.0+ 버전 최신 ORM 패턴 적용
+- 16개 이상의 복잡한 엔티티 모델 설계 및 관계 정의
+- 1:N, M:N 관계 매핑 (User ↔ Quest, School ↔ User, Account 관계 등)
+- Enum 타입 활용으로 타입 안전성 확보 (10+ Enum 정의)
+- Alembic 마이그레이션 프레임워크 통합
+- 복잡한 쿼리 최적화 (JOIN, 서브쿼리, 집계 함수)
+
+### MySQL 데이터베이스 설계 ⭐⭐⭐⭐⭐
+- MySQL 8.0 기반 관계형 데이터베이스 스키마 설계
+- 정규화된 테이블 구조 (Users, Quests, QuestAttempts, Finance 계층)
+- UniqueConstraint, ForeignKey를 활용한 데이터 무결성 보장
+- 인덱싱 전략 수립 (복합 인덱스, 외래키 인덱스)
+- 트랜잭션 관리 및 ACID 속성 활용
+- School Leaderboard 집계 쿼리 최적화
+
+### JWT 인증 시스템 ⭐⭐⭐⭐⭐
+- python-jose 기반 JWT 토큰 발급 및 검증
+- bcrypt를 활용한 안전한 패스워드 해싱
+- Bearer Token 인증 스키마 구현
+- Redis 기반 JWT 블랙리스트 시스템 (로그아웃 처리)
+- 24시간 토큰 만료 정책 및 자동 갱신 메커니즘
+- Dependency Injection으로 보호된 엔드포인트 구현
+
+### Redis 캐싱 & 세션 관리 ⭐⭐⭐⭐
+- Redis 7.2 기반 고속 캐시 레이어 구축
+- JWT 블랙리스트 관리 (Set 자료구조)
+- 추천 시스템 결과 캐싱 (성능 최적화)
+- 사용자 세션 데이터 임시 저장
+- TTL 기반 자동 만료 정책
+
+### 외부 API 통합 ⭐⭐⭐⭐⭐
+- SSAFY Finance API 연동 (계좌 생성, 조회, 거래)
+- httpx 비동기 HTTP 클라이언트 활용
+- API 키 관리 및 헤더 구성 자동화
+- 에러 핸들링 및 재시도 로직 구현
+- 사용자별 user_key 관리 (SSAFY 통합 인증)
+- 계좌 개설, 적금 상품 생성, 송금 등 금융 트랜잭션 구현
+
+### Docker & Docker Compose ⭐⭐⭐⭐⭐
+- 4개 서비스 컨테이너 오케스트레이션 (FastAPI, MySQL, Redis, Nginx)
+- Dockerfile 멀티 스테이지 빌드 템플릿 작성
+- Named Volume으로 데이터 영속성 보장 (mysql_data, redis_data)
+- 서비스 간 의존성 관리 (depends_on 활용)
+- 환경 변수 주입 (DATABASE_URL, REDIS_URL)
+- docker-compose.yml로 개발/배포 환경 일원화
+- phpMyAdmin 통합으로 데이터베이스 GUI 관리
+
+### Nginx 리버스 프록시 ⭐⭐⭐⭐
+- Nginx Alpine 기반 경량 웹 서버 구축
+- FastAPI 앱 프록시 (Port 80 → 8000)
+- CORS 헤더 설정 및 Preflight 요청 처리
+- 클라이언트 최대 바디 사이즈 설정 (10MB, 파일 업로드)
+- 헬스체크 엔드포인트 라우팅
+- 액세스 로그 및 에러 로그 관리
+- 정적 파일 서빙 준비
+
+### AWS EC2 배포 ⭐⭐⭐⭐⭐
+- Ubuntu 서버에 Docker Compose 기반 배포
+- systemd 서비스 파일 작성 (대안 배포 방식)
+- SSH 키 기반 원격 서버 접근 및 관리
+- 방화벽 설정 (UFW), 포트 개방 (80, 443, 8000, 3306, 6379)
+- 서버 프로비저닝 및 초기 환경 설정
+- 애플리케이션 재시작 및 로그 모니터링
+
+### 게임화 시스템 설계 ⭐⭐⭐⭐⭐
+- 퀘스트 기반 미션 시스템 구현 (LIFE, GROWTH, SURPRISE 타입)
+- 경험치 및 티어 시스템 (BASIC → BRONZE → SILVER → GOLD → SOL)
+- 8가지 검증 방식 (GPS, STEPS, LINK, UPLOAD, PAYMENT, ATTENDANCE, CERTIFICATION, CONTEST, QUIZ)
+- 진행률 추적 및 상태 관리 (DEACTIVE, IN_PROGRESS, CLEAR, SUBMITTED, APPROVED)
+- 일일/주간/월간 퀘스트 리셋 메커니즘 (period_key 활용)
+- 학교별 리더보드 실시간 집계 (total_exp, avg_exp, rank)
+
+### 추천 시스템 개발 ⭐⭐⭐⭐
+- 하이브리드 추천 알고리즘 구현 (Cold Start → Collaborative Filtering + Content-Based)
+- 설문 기반 초기 추천 (사용자 선호도 분석)
+- 클릭률, 완료율 기반 추천 정확도 개선
+- 다양성 보장 알고리즘 (카테고리별 분산 추천)
+- Numpy 기반 수치 계산 및 유사도 분석
+- 추천 이력 추적 (QuestRecommendation, QuestRecoInteraction)
+
+### RESTful API 설계 ⭐⭐⭐⭐⭐
+- REST 원칙 준수 API 엔드포인트 설계
+- 명확한 HTTP 메서드 사용 (GET, POST, PATCH, DELETE)
+- 계층적 URL 구조 (/api/v1/...)
+- 상태 코드 표준화 (200, 201, 400, 401, 404, 500)
+- Pydantic 스키마 기반 요청/응답 검증
+- 에러 메시지 표준화 및 예외 처리 체계
+
+### 파일 업로드 처리 ⭐⭐⭐⭐
+- python-multipart를 활용한 멀티파트 폼 처리
+- 파일 타입 검증 (.jpg, .png, .pdf, .doc, .docx)
+- 파일 크기 제한 (10MB)
+- 고유 파일명 생성 (UUID 기반)
+- S3 업로드 시뮬레이션 (향후 확장 가능)
+- 퀘스트 인증 자료 제출 시스템
+
+### Pydantic 데이터 검증 ⭐⭐⭐⭐
+- Pydantic 2.x 기반 스키마 정의
+- 타입 힌트 기반 자동 검증
+- 커스텀 Validator 작성 (email, password 강도 등)
+- Request/Response 모델 분리
+- 중첩 모델 및 Optional 필드 처리
+- JSON 직렬화 최적화 (orjson)
+
+### 출석 체크 시스템 ⭐⭐⭐⭐
+- 일일 출석 체크 API 구현
+- UniqueConstraint로 중복 체크 방지 (user_id, date)
+- 출석 시 자동 퀘스트 완료 (20 exp 보상)
+- 월별 출석 현황 조회 API
+- 출석률 계산 및 통계 제공
+- KST 타임존 처리 (한국 시간 기준)
+
+### 금융 시스템 통합 ⭐⭐⭐⭐⭐
+- 수시입출금 계좌 생성 API
+- 정기적금 계좌 생성 및 관리
+- 계좌 조회, 잔액 확인
+- 계좌 이체 트랜잭션 처리
+- 결제 시스템 (Merchant 연동)
+- 거래 내역 추적 (AccountTransaction 레저)
+- 적금 만기 계산 및 이자율 적용
+
+### 환경 변수 관리 ⭐⭐⭐⭐
+- python-dotenv로 .env 파일 로딩
+- pydantic-settings로 타입 안전 설정 관리
+- 개발/프로덕션 환경 분리
+- 민감 정보 보호 (API 키, DB 비밀번호)
+- Docker 환경 변수 주입
+
+### 테스트 프레임워크 ⭐⭐⭐
+- pytest 기반 테스트 환경 구축
+- pytest-asyncio로 비동기 테스트 지원
+- 테스트 데이터베이스 분리
+- Mock 객체 활용 (외부 API 테스트)
+
+### 에러 추적 ⭐⭐⭐
+- Sentry 통합으로 실시간 에러 모니터링
+- 예외 자동 캡처 및 알림
+- 스택 트레이스 분석
+- 에러 빈도 및 패턴 분석
 ---
 
 ## 종합 기술 역량
@@ -218,6 +370,11 @@
 ### 프론트엔드 프레임워크
 - **React (웹)**: 대규모 SPA 개발, Hooks, Context API, 컴포넌트 설계
 - **React Native (모바일)**: Expo 기반 크로스 플랫폼 앱 개발, Atomic Design 패턴
+
+### 백엔드 프레임워크
+- **FastAPI**: 비동기 REST API 서버, Pydantic 검증, OpenAPI 자동 문서화
+- **SQLAlchemy**: ORM 설계, 복잡한 관계 매핑, 마이그레이션
+- **Spring Boot**: 엔터프라이즈 백엔드 아키텍처 이해 (Dollar Insight 프로젝트)
 
 ### 상태 관리
 - **Zustand**: 경량 상태 관리, AsyncStorage 연동
@@ -232,12 +389,13 @@
 - **Jenkins**: CI/CD 파이프라인 구축, 자동화 배포
 - **Nginx**: 리버스 프록시, SSL/TLS, Rate Limiting, SSE 처리
 - **Bash**: 복잡한 배포 스크립트 작성, 에러 핸들링, 백업/복구
-- **AWS EC2**: 클라우드 서버 관리, 보안 설정
+- **AWS EC2**: 클라우드 서버 관리, 보안 설정, systemd 배포
 
 ### 모니터링 & 로깅
 - **Prometheus**: 메트릭 수집 및 쿼리
 - **Grafana**: 대시보드 시각화
 - **cAdvisor**: 컨테이너 모니터링
+- **Sentry**: 실시간 에러 추적
 
 ### UI/UX 설계
 - **Figma**: 디자인 시스템 구축 및 픽셀 퍼펙트 구현
@@ -246,18 +404,29 @@
 
 ### API & 네트워킹
 - **Axios/Dio**: HTTP 클라이언트, Interceptor, 에러 핸들링
+- **httpx**: 비동기 HTTP 클라이언트 (Python)
 - **RESTful API**: 설계 및 연동
 - **JWT**: 토큰 기반 인증 및 리프레시 메커니즘
+- **외부 API 통합**: SSAFY Finance API, 금융 트랜잭션
 
 ### 데이터베이스
-- **PostgreSQL**: 관계형 데이터 설계
-- **MongoDB**: 도큐먼트 스토리지
-- **Redis**: 캐싱, Pub/Sub
+- **MySQL**: 관계형 데이터베이스 설계, 인덱싱, 쿼리 최적화
+- **PostgreSQL**: 관계형 데이터 설계 (Dollar Insight)
+- **MongoDB**: 도큐먼트 스토리지 (Dollar Insight)
+- **Redis**: 캐싱, Pub/Sub, 세션 관리, JWT 블랙리스트
 
 ### 개발 도구
 - **Git/GitLab**: 버전 관리, 브랜치 전략
 - **TypeScript**: 타입 안전성, 코드 제너레이션
 - **Vite**: 빌드 최적화
+- **pytest**: Python 테스트 프레임워크
+
+### 보안
+- **JWT 인증**: 토큰 발급, 검증, 블랙리스트
+- **bcrypt**: 패스워드 해싱
+- **SSL/TLS**: HTTPS 암호화
+- **CORS**: 교차 출처 리소스 공유 정책
+- **입력 검증**: Pydantic, SQL Injection 방지
 
 ---
 
