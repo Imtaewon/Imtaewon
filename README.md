@@ -47,7 +47,6 @@
 
 ### Zustand ⭐⭐⭐⭐
 - 경량 상태 관리 라이브러리로 authStore, chatRoomStore, notificationStore 구현
-- Redux Toolkit 대비 boilerplate 최소화 및 성능 최적화
 - Immutable 업데이트 패턴 적용으로 안정적인 상태 관리
 
 ### CSS & Tailwind CSS ⭐⭐⭐⭐
@@ -79,7 +78,6 @@
 ### Figma UI/UX 설계 및 구현 ⭐⭐⭐⭐⭐
 - Figma 디자인 시스템 기반 픽셀 퍼펙트 UI 구현 (440px × 957px 레이아웃)
 - 중앙 집중식 테마 시스템 (theme.ts) 설계: 18개 색상, 타이포그래피, 스페이싱, 그라데이션
-- Pretendard 폰트 9개 웨이트 적용 및 일관된 타이포그래피 시스템 구축
 - 디자인 토큰 기반 유지보수성 높은 스타일 관리
 
 ### TypeScript ⭐⭐⭐⭐
@@ -127,7 +125,7 @@
 **역할: 인프라 전담 (Docker, Jenkins, Nginx 등) + 프론트엔드 API 연결 및 채팅 시스템 구현**
 
 ### Docker & Docker Compose ⭐⭐⭐⭐⭐
-- 14개 서비스 멀티 컨테이너 오케스트레이션 설계 및 구현
+- 13개 서비스 멀티 컨테이너 오케스트레이션 설계 및 구현
 - 서비스 계층 분리: 데이터베이스(보존) / 애플리케이션(업데이트) / 모니터링
 - Health Check 기반 의존성 관리 및 자동 재시작
 - Named Volume을 통한 데이터 영속성 보장 (postgres_data, mongodb_data, redis_data, chromadb_data)
@@ -135,7 +133,7 @@
 - 커스텀 브리지 네트워크(172.20.0.0/16)로 서비스 간 DNS 통신
 
 ### Jenkins CI/CD ⭐⭐⭐⭐⭐
-- Declarative Pipeline(Groovy DSL)으로 8단계 자동화 파이프라인 구축
+- Declarative Pipeline(Groovy DSL)으로 7단계 자동화 파이프라인 구축
 - Git Webhook 연동 및 자동 빌드 트리거
 - 3개 서비스 Docker 이미지 빌드 및 Docker Hub Registry 푸시
 - SSH 기반 EC2 원격 배포 자동화
@@ -154,7 +152,7 @@
 - 3개 관리 도구 프록시 (pgAdmin, Mongo Express, Redis Commander)
 
 ### Bash 스크립팅 ⭐⭐⭐⭐⭐
-- deploy.sh (2697라인): 배포 자동화 마스터 스크립트 작성
+- deploy.sh (864라인): 배포 자동화 마스터 스크립트 작성
 - 35+ 함수 모듈화로 재사용성 및 유지보수성 확보
 - 배포 모드: deploy(앱만 업데이트), deploy-all(전체), rollback(복구)
 - 백업 관리 (최대 5개 유지, 타임스탬프 기반)
@@ -228,7 +226,6 @@
 - 16개 이상의 복잡한 엔티티 모델 설계 및 관계 정의
 - 1:N, M:N 관계 매핑 (User ↔ Quest, School ↔ User, Account 관계 등)
 - Enum 타입 활용으로 타입 안전성 확보 (10+ Enum 정의)
-- Alembic 마이그레이션 프레임워크 통합
 - 복잡한 쿼리 최적화 (JOIN, 서브쿼리, 집계 함수)
 
 ### MySQL 데이터베이스 설계 ⭐⭐⭐⭐⭐
@@ -250,7 +247,6 @@
 ### Redis 캐싱 & 세션 관리 ⭐⭐⭐⭐
 - Redis 7.2 기반 고속 캐시 레이어 구축
 - JWT 블랙리스트 관리 (Set 자료구조)
-- 추천 시스템 결과 캐싱 (성능 최적화)
 - 사용자 세션 데이터 임시 저장
 - TTL 기반 자동 만료 정책
 
@@ -258,7 +254,7 @@
 - SSAFY Finance API 연동 (계좌 생성, 조회, 거래)
 - httpx 비동기 HTTP 클라이언트 활용
 - API 키 관리 및 헤더 구성 자동화
-- 에러 핸들링 및 재시도 로직 구현
+- 에러 핸들링 구현
 - 사용자별 user_key 관리 (SSAFY 통합 인증)
 - 계좌 개설, 적금 상품 생성, 송금 등 금융 트랜잭션 구현
 
@@ -800,7 +796,7 @@
 
 **httpx 비동기 클라이언트**
 - **선택 근거**: SSAFY 금융 OpenAPI 호출 시 동기식 requests 라이브러리를 사용하면 외부 API 응답 대기 중 다른 사용자 요청이 블로킹되는 문제가 발생했습니다. 외부 API 장애와 무관하게 서비스 안정성을 확보해야 했습니다.
-- **구체적 활용**: 비동기 HTTP 호출로 외부 API와 내부 처리 분리, 재시도 로직과 타임아웃 설정으로 장애 격리
+- **구체적 활용**: 비동기 HTTP 호출로 외부 API와 내부 처리 분리, 에러 핸들링
 
 **Docker Compose (5개 서비스 오케스트레이션)**
 - **선택 근거**: 팀원 간 개발 환경 일관성 확보와 향후 클라우드 배포 확장성을 고려했습니다. 실제 해커톤 서비스는 systemd로 직접 배포했지만, 추후 마이크로서비스 확장을 위한 컨테이너화 전략을 수립했습니다.
