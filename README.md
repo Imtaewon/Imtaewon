@@ -13,9 +13,10 @@
 - **학력**: 경북대학교 물리학과 (2018.03 - 2024.08)
 
 ### 🏆 자격증 & 수상
+- **SQLD**  (2025.12)
 - **방재기사** (2024.12)
 - **OPic IM1** (2025.09)
-- **신한은행 해커톤 참가** (2025.08)
+- **신한은행 해커톤 본선 참가** (2025.08)
 
 ### 🎓 교육 이수
 
@@ -29,187 +30,6 @@
 ---
 
 ## ⚒️ Tech Skills
-## FIK@SSAFY
-**역할: 프론트엔드 채팅 시스템 구현 및 관리자 페이지 제작**
-
-### React ⭐⭐⭐⭐⭐
-- Vite 빌드 시스템을 활용한 최신 React 19 개발 환경 구축
-- 68개의 컴포넌트를 체계적으로 구조화한 대규모 SPA 개발
-- Custom Hooks(useWebSocket.js)를 활용한 로직 재사용성 극대화
-- Provider 패턴과 Context API를 통한 전역 상태 관리
-
-### WebSocket ⭐⭐⭐⭐⭐
-- Singleton 패턴 기반 WebSocket 서비스 설계 및 구현
-- 자동 재연결, Heartbeat(30s PING/90s PONG) 메커니즘 구현
-- 다중 메시지 타입 핸들링 (MESSAGE, JOIN_ROOM, LEAVE_ROOM, TYPING, READ)
-- 실시간 알림, 타이핑 인디케이터, 읽음 표시 등 UX 중심 기능 구현
-- Redis Pub/Sub과 연동한 수평 확장 가능한 채팅 아키텍처 이해
-
-### Zustand ⭐⭐⭐⭐
-- 경량 상태 관리 라이브러리로 authStore, chatRoomStore, notificationStore 구현
-- Immutable 업데이트 패턴 적용으로 안정적인 상태 관리
-
-### CSS & Tailwind CSS ⭐⭐⭐⭐
-- Tailwind CSS를 활용한 유틸리티 우선 스타일링
-- 반응형 레이아웃 및 컴포넌트별 스타일 모듈화
-- 관리자 페이지 UI/UX 설계 및 구현 (탭 기반 인터페이스, CRUD 폼)
-
-### Axios ⭐⭐⭐⭐
-- 9개의 API 서비스 모듈 설계 (chatAPI, userAPI, coffeeChatAPI, quizAPI 등)
-- Interceptor를 활용한 인증 토큰 자동 주입 및 에러 핸들링
-- RESTful API 연동 및 비동기 데이터 플로우 관리
-
-### 관리자 페이지 구현 경험 ⭐⭐⭐⭐
-- EventManagement, MenuManagement, CoffeeChatMatching, NoticeManagement 컴포넌트 개발
-- 몬테카르로 매칭 알고리즘 UI 구현 (필터링, 그룹화 미리보기, 최종 확정)
-- CRUD 연산, 페이지네이션, 검색 필터링 등 관리자 기능 전반 구현
-
----
-
-## WEATHEREVER
-**역할: 프론트엔드 전담 (Figma UI/UX, React Native)**
-
-### React Native ⭐⭐⭐⭐⭐
-- Expo SDK 54 + React Native 0.81 기반 크로스 플랫폼 앱 개발
-- Atomic Design 패턴 적용 (41개 컴포넌트: Atoms 21, Molecules 16, Organisms 4)
-- iOS/Android/Web 동시 지원 및 플랫폼별 최적화
-- SafeAreaView, Platform API를 활용한 네이티브 UX 구현
-
-### Figma UI/UX 설계 및 구현 ⭐⭐⭐⭐⭐
-- Figma 디자인 시스템 기반 픽셀 퍼펙트 UI 구현 (440px × 957px 레이아웃)
-- 중앙 집중식 테마 시스템 (theme.ts) 설계: 18개 색상, 타이포그래피, 스페이싱, 그라데이션
-- 디자인 토큰 기반 유지보수성 높은 스타일 관리
-
-### TypeScript ⭐⭐⭐⭐
-- Strict 모드 활성화로 타입 안전성 확보
-- 3개 타입 정의 파일로 도메인 모델 명확화 (LocationData, WeatherData, UserApiData 등)
-- JSON 직렬화를 위한 json_annotation 기반 코드 제너레이션
-
-### Expo 생태계 ⭐⭐⭐⭐⭐
-- expo-location: GPS 기반 위치 추적 및 권한 관리
-- expo-av, expo-video: 캐릭터 애니메이션 멀티미디어 처리
-- expo-font: 커스텀 폰트 로딩 및 관리
-- expo-status-bar: 상태바 스타일링
-
-### Zustand 상태 관리 ⭐⭐⭐⭐
-- appStore (14.3KB): 날씨, 위치, 사용자, API 동기화 상태 통합 관리
-- characterStore: AsyncStorage 기반 캐릭터 상태 지속성
-- Pending changes queue 구현으로 오프라인 지원
-
-### 위치 기반 서비스 ⭐⭐⭐⭐
-- GPS 자동 위치 감지 및 수동 검색 듀얼 시스템
-- Nominatim(OpenStreetMap) + Google Places 이중 지오코딩 fallback 구현
-- Expo SDK 49 breaking change 대응 (reverseGeocodeAsync 제거 → 커스텀 구현)
-- 디바운스 검색, 위치 캐싱으로 성능 최적화
-
-### Custom Hooks 설계 ⭐⭐⭐⭐
-- useLocation: 위치 추적 및 캐싱 로직 캡슐화
-- useLocationSearch: 자동완성 검색 로직
-- useDeviceLayout: 반응형 레이아웃 계산
-- useLocationPermission: 권한 상태 관리
-- 로직 재사용성과 테스트 가능성 향상
-
-### API 통합 ⭐⭐⭐⭐
-- 12개 서비스 레이어 모듈 설계 (weatherService, userApiService, locationService 등)
-- Dio 기반 HTTP 클라이언트 구성 (타임아웃, 인터셉터, 에러 핸들링)
-- RESTful API 연동 및 비동기 데이터 플로우 관리
-
-### 애니메이션 & 미디어 처리 ⭐⭐⭐
-- GIF 기반 캐릭터 애니메이션 시스템 (react-native-video → expo-av → GIF 진화)
-- 날씨 조건별 애니메이션 표시 (clouds.gif, rain.gif, snow.gif)
-- 크로스 플랫폼 호환성을 고려한 미디어 포맷 선택
-
----
-
-## Dollar Insight
-**역할: 인프라 전담 (Docker, Jenkins, Nginx 등) + 프론트엔드 API 연결 및 채팅 시스템 구현**
-
-### Docker & Docker Compose ⭐⭐⭐⭐⭐
-- 13개 서비스 멀티 컨테이너 오케스트레이션 설계 및 구현
-- 서비스 계층 분리: 데이터베이스(보존) / 애플리케이션(업데이트) / 모니터링
-- Health Check 기반 의존성 관리 및 자동 재시작
-- Named Volume을 통한 데이터 영속성 보장 (postgres_data, mongodb_data, redis_data, chromadb_data)
-- 멀티 스테이지 빌드로 이미지 크기 최적화 (gradle:8.5-jdk21 → eclipse-temurin:21-jre-alpine)
-- 커스텀 브리지 네트워크(172.20.0.0/16)로 서비스 간 DNS 통신
-
-### Jenkins CI/CD ⭐⭐⭐⭐⭐
-- Declarative Pipeline(Groovy DSL)으로 7단계 자동화 파이프라인 구축
-- Git Webhook 연동 및 자동 빌드 트리거
-- 3개 서비스 Docker 이미지 빌드 및 Docker Hub Registry 푸시
-- SSH 기반 EC2 원격 배포 자동화
-- 버전 태깅 전략: `<commit-hash-7chars>-<build-number>` + `latest` 태그
-- 배포 검증 (health check) 및 실패 시 자동 로그 수집
-- 24시간 기준 이미지 정리로 디스크 공간 관리
-
-### Nginx ⭐⭐⭐⭐⭐
-- 리버스 프록시 및 로드 밸런서 역할 수행
-- SSL/TLS 종단점 처리 (Let's Encrypt 인증서, HTTP → HTTPS 301 리다이렉트)
-- Rate Limiting: 10r/s (일반), 30r/s (API) 정책 적용으로 DDoS 방어
-- SSE(Server-Sent Events) 특수 처리 (10분 타임아웃, 버퍼링 비활성화)
-- Gzip 압축, HTTP/2, WebSocket 프록시 지원
-- 보안 헤더 설정 (HSTS, X-Frame-Options, CSP, nosniff)
-- 정적 파일 서빙 (APK 다운로드, 적절한 MIME 타입 및 Content-Disposition)
-- 3개 관리 도구 프록시 (pgAdmin, Mongo Express, Redis Commander)
-
-### Bash 스크립팅 ⭐⭐⭐⭐⭐
-- deploy.sh (864라인): 배포 자동화 마스터 스크립트 작성
-- 35+ 함수 모듈화로 재사용성 및 유지보수성 확보
-- 배포 모드: deploy(앱만 업데이트), deploy-all(전체), rollback(복구)
-- 백업 관리 (최대 5개 유지, 타임스탬프 기반)
-- Health Check 자동화 (30회 재시도, 10초 간격)
-- 색상 코딩된 출력으로 사용자 경험 개선
-- Flutter APK 빌드 및 배포 통합 (build-apk, deploy-apk)
-- 서비스별 로그 조회, 상태 확인, 클린업 기능 제공
-
-### Prometheus & Grafana ⭐⭐⭐⭐
-- Prometheus 메트릭 수집 인프라 구축 (15초 스크랩 주기)
-- 4개 타겟 모니터링: Backend(Actuator), AI Service, cAdvisor, Prometheus 자체
-- Grafana 대시보드 연동 및 실시간 시각화
-- cAdvisor로 컨테이너별 리소스 사용량 추적 (CPU, 메모리, 네트워크, I/O)
-- Spring Boot Actuator 메트릭 (JVM heap, GC, HTTP 요청률/지연)
-
-### 데이터베이스 관리 ⭐⭐⭐⭐
-- PostgreSQL 15: 사용자, 인증, 세션 메타데이터 관리
-- MongoDB 7: 채팅 메시지, 뉴스 데이터 스토리지
-- Redis 7: 캐시, 메시지 브로커, 실시간 데이터
-- ChromaDB: RAG를 위한 벡터 데이터베이스
-- 각 DB별 Health Check 및 데이터 영속성 보장
-- 관리 도구 통합 (pgAdmin, Mongo Express, Redis Commander)
-
-### Flutter API 연동 ⭐⭐⭐⭐
-- Dio 기반 ApiClient 구현 (Interceptor, 토큰 자동 주입, 401 리프레시 로직)
-- ChatApi 래퍼 클래스로 10개 채팅 엔드포인트 통합 관리
-- SSE 스트리밍용 Dio 인스턴스 별도 구성
-- Header 관리: Authorization, X-Device-Id, Last-Event-ID
-- 에러 핸들링: ChatApiException 커스텀 예외 체계
-
-### SSE(Server-Sent Events) 채팅 시스템 ⭐⭐⭐⭐⭐
-- 3계층 실시간 스트리밍 아키텍처: Flutter ↔ Spring Boot ↔ FastAPI
-- 세션 생성, 메시지 전송, 스트림 제어(중단/재개/속도 조절) 구현
-- Last-Event-ID 기반 재연결 복구 메커니즘
-- 10분 장시간 연결 처리 (Nginx 타임아웃 설정)
-- 커서 기반 페이지네이션으로 무한 스크롤 히스토리 구현
-
-### Linux & AWS EC2 ⭐⭐⭐⭐
-- Ubuntu 22.04 LTS 서버 관리
-- SSH 키 기반 인증 및 보안 설정
-- `/opt/S13P31B205` 배포 디렉토리 구조 설계
-- 방화벽, 포트 포워딩, 네트워크 설정
-- 로그 관리 및 디스크 공간 모니터링
-
-### SSL/TLS & 보안 ⭐⭐⭐⭐
-- Let's Encrypt 인증서 자동 갱신 설정
-- TLS 1.2/1.3 프로토콜 및 모던 암호화 스위트 적용
-- HSTS 1년 정책, X-Frame-Options, CSP 헤더 설정
-- Rate Limiting, Request Size Limit으로 보안 강화
-- 컨테이너 비root 실행 (appuser, spring 사용자)
-
-### Git & 버전 관리 ⭐⭐⭐⭐
-- GitLab 리포지토리 관리 및 브랜치 전략 (develop 브랜치 배포)
-- 커밋 해시 기반 이미지 버저닝
-- .gitignore 설정 및 .env.template을 통한 시크릿 관리
-
-
 ## Sol_Sol_Quest
 **역할: 백엔드 전담 + 인프라 (AWS EC2 배포)**
 
@@ -341,6 +161,190 @@
 - Docker 환경 변수 주입
 
 ---
+
+
+## Dollar Insight
+**역할: 인프라 전담 (Docker, Jenkins, Nginx 등) + 프론트엔드 API 연결 및 채팅 시스템 구현**
+
+### Docker & Docker Compose ⭐⭐⭐⭐⭐
+- 13개 서비스 멀티 컨테이너 오케스트레이션 설계 및 구현
+- 서비스 계층 분리: 데이터베이스(보존) / 애플리케이션(업데이트) / 모니터링
+- Health Check 기반 의존성 관리 및 자동 재시작
+- Named Volume을 통한 데이터 영속성 보장 (postgres_data, mongodb_data, redis_data, chromadb_data)
+- 멀티 스테이지 빌드로 이미지 크기 최적화 (gradle:8.5-jdk21 → eclipse-temurin:21-jre-alpine)
+- 커스텀 브리지 네트워크(172.20.0.0/16)로 서비스 간 DNS 통신
+
+### Jenkins CI/CD ⭐⭐⭐⭐⭐
+- Declarative Pipeline(Groovy DSL)으로 7단계 자동화 파이프라인 구축
+- Git Webhook 연동 및 자동 빌드 트리거
+- 3개 서비스 Docker 이미지 빌드 및 Docker Hub Registry 푸시
+- SSH 기반 EC2 원격 배포 자동화
+- 버전 태깅 전략: `<commit-hash-7chars>-<build-number>` + `latest` 태그
+- 배포 검증 (health check) 및 실패 시 자동 로그 수집
+- 24시간 기준 이미지 정리로 디스크 공간 관리
+
+### Nginx ⭐⭐⭐⭐⭐
+- 리버스 프록시 및 로드 밸런서 역할 수행
+- SSL/TLS 종단점 처리 (Let's Encrypt 인증서, HTTP → HTTPS 301 리다이렉트)
+- Rate Limiting: 10r/s (일반), 30r/s (API) 정책 적용으로 DDoS 방어
+- SSE(Server-Sent Events) 특수 처리 (10분 타임아웃, 버퍼링 비활성화)
+- Gzip 압축, HTTP/2, WebSocket 프록시 지원
+- 보안 헤더 설정 (HSTS, X-Frame-Options, CSP, nosniff)
+- 정적 파일 서빙 (APK 다운로드, 적절한 MIME 타입 및 Content-Disposition)
+- 3개 관리 도구 프록시 (pgAdmin, Mongo Express, Redis Commander)
+
+### Bash 스크립팅 ⭐⭐⭐⭐⭐
+- deploy.sh (864라인): 배포 자동화 마스터 스크립트 작성
+- 35+ 함수 모듈화로 재사용성 및 유지보수성 확보
+- 배포 모드: deploy(앱만 업데이트), deploy-all(전체), rollback(복구)
+- 백업 관리 (최대 5개 유지, 타임스탬프 기반)
+- Health Check 자동화 (30회 재시도, 10초 간격)
+- 색상 코딩된 출력으로 사용자 경험 개선
+- Flutter APK 빌드 및 배포 통합 (build-apk, deploy-apk)
+- 서비스별 로그 조회, 상태 확인, 클린업 기능 제공
+
+### Prometheus & Grafana ⭐⭐⭐⭐
+- Prometheus 메트릭 수집 인프라 구축 (15초 스크랩 주기)
+- 4개 타겟 모니터링: Backend(Actuator), AI Service, cAdvisor, Prometheus 자체
+- Grafana 대시보드 연동 및 실시간 시각화
+- cAdvisor로 컨테이너별 리소스 사용량 추적 (CPU, 메모리, 네트워크, I/O)
+- Spring Boot Actuator 메트릭 (JVM heap, GC, HTTP 요청률/지연)
+
+### 데이터베이스 관리 ⭐⭐⭐⭐
+- PostgreSQL 15: 사용자, 인증, 세션 메타데이터 관리
+- MongoDB 7: 채팅 메시지, 뉴스 데이터 스토리지
+- Redis 7: 캐시, 메시지 브로커, 실시간 데이터
+- ChromaDB: RAG를 위한 벡터 데이터베이스
+- 각 DB별 Health Check 및 데이터 영속성 보장
+- 관리 도구 통합 (pgAdmin, Mongo Express, Redis Commander)
+
+### Flutter API 연동 ⭐⭐⭐⭐
+- Dio 기반 ApiClient 구현 (Interceptor, 토큰 자동 주입, 401 리프레시 로직)
+- ChatApi 래퍼 클래스로 10개 채팅 엔드포인트 통합 관리
+- SSE 스트리밍용 Dio 인스턴스 별도 구성
+- Header 관리: Authorization, X-Device-Id, Last-Event-ID
+- 에러 핸들링: ChatApiException 커스텀 예외 체계
+
+### SSE(Server-Sent Events) 채팅 시스템 ⭐⭐⭐⭐⭐
+- 3계층 실시간 스트리밍 아키텍처: Flutter ↔ Spring Boot ↔ FastAPI
+- 세션 생성, 메시지 전송, 스트림 제어(중단/재개/속도 조절) 구현
+- Last-Event-ID 기반 재연결 복구 메커니즘
+- 10분 장시간 연결 처리 (Nginx 타임아웃 설정)
+- 커서 기반 페이지네이션으로 무한 스크롤 히스토리 구현
+
+### Linux & AWS EC2 ⭐⭐⭐⭐
+- Ubuntu 22.04 LTS 서버 관리
+- SSH 키 기반 인증 및 보안 설정
+- `/opt/S13P31B205` 배포 디렉토리 구조 설계
+- 방화벽, 포트 포워딩, 네트워크 설정
+- 로그 관리 및 디스크 공간 모니터링
+
+### SSL/TLS & 보안 ⭐⭐⭐⭐
+- Let's Encrypt 인증서 자동 갱신 설정
+- TLS 1.2/1.3 프로토콜 및 모던 암호화 스위트 적용
+- HSTS 1년 정책, X-Frame-Options, CSP 헤더 설정
+- Rate Limiting, Request Size Limit으로 보안 강화
+- 컨테이너 비root 실행 (appuser, spring 사용자)
+
+### Git & 버전 관리 ⭐⭐⭐⭐
+- GitLab 리포지토리 관리 및 브랜치 전략 (develop 브랜치 배포)
+- 커밋 해시 기반 이미지 버저닝
+- .gitignore 설정 및 .env.template을 통한 시크릿 관리
+
+---
+
+## FIK@SSAFY
+**역할: 프론트엔드 채팅 시스템 구현 및 관리자 페이지 제작**
+
+### React ⭐⭐⭐⭐⭐
+- Vite 빌드 시스템을 활용한 최신 React 19 개발 환경 구축
+- 68개의 컴포넌트를 체계적으로 구조화한 대규모 SPA 개발
+- Custom Hooks(useWebSocket.js)를 활용한 로직 재사용성 극대화
+- Provider 패턴과 Context API를 통한 전역 상태 관리
+
+### WebSocket ⭐⭐⭐⭐⭐
+- Singleton 패턴 기반 WebSocket 서비스 설계 및 구현
+- 자동 재연결, Heartbeat(30s PING/90s PONG) 메커니즘 구현
+- 다중 메시지 타입 핸들링 (MESSAGE, JOIN_ROOM, LEAVE_ROOM, TYPING, READ)
+- 실시간 알림, 타이핑 인디케이터, 읽음 표시 등 UX 중심 기능 구현
+- Redis Pub/Sub과 연동한 수평 확장 가능한 채팅 아키텍처 이해
+
+### Zustand ⭐⭐⭐⭐
+- 경량 상태 관리 라이브러리로 authStore, chatRoomStore, notificationStore 구현
+- Immutable 업데이트 패턴 적용으로 안정적인 상태 관리
+
+### CSS & Tailwind CSS ⭐⭐⭐⭐
+- Tailwind CSS를 활용한 유틸리티 우선 스타일링
+- 반응형 레이아웃 및 컴포넌트별 스타일 모듈화
+- 관리자 페이지 UI/UX 설계 및 구현 (탭 기반 인터페이스, CRUD 폼)
+
+### Axios ⭐⭐⭐⭐
+- 9개의 API 서비스 모듈 설계 (chatAPI, userAPI, coffeeChatAPI, quizAPI 등)
+- Interceptor를 활용한 인증 토큰 자동 주입 및 에러 핸들링
+- RESTful API 연동 및 비동기 데이터 플로우 관리
+
+### 관리자 페이지 구현 경험 ⭐⭐⭐⭐
+- EventManagement, MenuManagement, CoffeeChatMatching, NoticeManagement 컴포넌트 개발
+- CRUD 연산, 페이지네이션, 검색 필터링 등 관리자 기능 전반 구현
+
+---
+
+## WEATHEREVER
+**역할: 프론트엔드 전담 (Figma UI/UX, React Native)**
+
+### React Native ⭐⭐⭐⭐⭐
+- Expo SDK 54 + React Native 0.81 기반 크로스 플랫폼 앱 개발
+- Atomic Design 패턴 적용 (41개 컴포넌트: Atoms 21, Molecules 16, Organisms 4)
+- iOS/Android/Web 동시 지원 및 플랫폼별 최적화
+- SafeAreaView, Platform API를 활용한 네이티브 UX 구현
+
+### Figma UI/UX 설계 및 구현 ⭐⭐⭐⭐⭐
+- Figma 디자인 시스템 기반 픽셀 퍼펙트 UI 구현 (440px × 957px 레이아웃)
+- 중앙 집중식 테마 시스템 (theme.ts) 설계: 18개 색상, 타이포그래피, 스페이싱, 그라데이션
+- 디자인 토큰 기반 유지보수성 높은 스타일 관리
+
+### TypeScript ⭐⭐⭐⭐
+- Strict 모드 활성화로 타입 안전성 확보
+- 3개 타입 정의 파일로 도메인 모델 명확화 (LocationData, WeatherData, UserApiData 등)
+- JSON 직렬화를 위한 json_annotation 기반 코드 제너레이션
+
+### Expo 생태계 ⭐⭐⭐⭐⭐
+- expo-location: GPS 기반 위치 추적 및 권한 관리
+- expo-av, expo-video: 캐릭터 애니메이션 멀티미디어 처리
+- expo-font: 커스텀 폰트 로딩 및 관리
+- expo-status-bar: 상태바 스타일링
+
+### Zustand 상태 관리 ⭐⭐⭐⭐
+- appStore (14.3KB): 날씨, 위치, 사용자, API 동기화 상태 통합 관리
+- characterStore: AsyncStorage 기반 캐릭터 상태 지속성
+- Pending changes queue 구현으로 오프라인 지원
+
+### 위치 기반 서비스 ⭐⭐⭐⭐
+- GPS 자동 위치 감지 및 수동 검색 듀얼 시스템
+- Nominatim(OpenStreetMap) + Google Places 이중 지오코딩 fallback 구현
+- Expo SDK 49 breaking change 대응 (reverseGeocodeAsync 제거 → 커스텀 구현)
+- 디바운스 검색, 위치 캐싱으로 성능 최적화
+
+### Custom Hooks 설계 ⭐⭐⭐⭐
+- useLocation: 위치 추적 및 캐싱 로직 캡슐화
+- useLocationSearch: 자동완성 검색 로직
+- useDeviceLayout: 반응형 레이아웃 계산
+- useLocationPermission: 권한 상태 관리
+- 로직 재사용성과 테스트 가능성 향상
+
+### API 통합 ⭐⭐⭐⭐
+- 12개 서비스 레이어 모듈 설계 (weatherService, userApiService, locationService 등)
+- Dio 기반 HTTP 클라이언트 구성 (타임아웃, 인터셉터, 에러 핸들링)
+- RESTful API 연동 및 비동기 데이터 플로우 관리
+
+### 애니메이션 & 미디어 처리 ⭐⭐⭐
+- GIF 기반 캐릭터 애니메이션 시스템 (react-native-video → expo-av → GIF 진화)
+- 날씨 조건별 애니메이션 표시 (clouds.gif, rain.gif, snow.gif)
+- 크로스 플랫폼 호환성을 고려한 미디어 포맷 선택
+
+---
+
+
 
 ## 종합 기술 역량
 
@@ -588,6 +592,117 @@
 
 ---
 
+
+## 🏆 쏠쏠한 퀘스트
+
+### **요약**
+💡 **"성장이 이자가 되고, 경쟁이 나눔이 되다"**
+
+**프로젝트 개요**: 대학생들의 금융 활동과 일상 습관을 게이미피케이션으로 연결하여 퀘스트 완료를 통해 경험치를 획득하고 실제 금융 혜택을 제공하는 핀테크 서비스입니다.
+
+**역할**: 4명 팀에서 백엔드 개발 총괄 및 인프라 담당으로 전체 시스템 아키텍처 설계와 구현을 주도했습니다.
+
+**프로젝트 시기**: 2025년 8월 (2주간 집중 개발)
+
+### **역할**
+
+**프로젝트 전체 인원**: 총 4명으로 구성된 팀 "금리복잡도 O(1)"에서 진행했습니다. 팀 구성은 PM 및 데이터베이스 1명, 백엔드 및 인프라 1명(본인), AI 추천시스템 개발자 1명, 프론트엔드 개발자 1명으로 이루어졌습니다.
+
+**나의 역할과 기여도**: **백엔드 개발 총괄 및 인프라 전담**으로서 전체 시스템의 기술적 기반을 단독으로 구축했습니다.
+
+- **전체 백엔드 아키텍처 설계**: FastAPI 기반으로 8개 도메인 모듈(auth, quests, users, universities, accounts, attendance, recommend, surveys)을 완전 독립적으로 분리하여 각각 router-schemas-service 패턴으로 구현
+- **복잡한 데이터베이스 설계**: SQLAlchemy를 활용하여 퀘스트-사용자-대학 간의 복잡한 관계형 모델링과 N+1 쿼리 최적화를 위한 서브쿼리 설계
+- **SSAFY 금융 OpenAPI 완전 연동**: 계좌 개설부터 이체 처리까지 전체 금융 프로세스 구현, httpx 비동기 클라이언트를 활용한 외부 API 호출 안정성 확보
+- **인프라 설계 및 구축**: Docker Compose를 활용한 5개 서비스 오케스트레이션 설계 (향후 확장 배포용), 실제 서비스는 systemd를 통한 서버 직접 배치
+- **보안 시스템 구현**: JWT + Redis 블랙리스트를 활용한 로그아웃 토큰 즉시 무효화, bcrypt 기반 패스워드 해싱
+
+*팀 내 기여도는 약 40%로, 전체 백엔드 시스템과 인프라를 단독으로 담당하며 프로젝트의 기술적 토대를 구축했습니다.*
+
+### **아키텍처**
+<img src="./아키텍처_최종수정.png" />
+
+
+
+### **사용 기술 및 선택 이유**
+
+**FastAPI + SQLAlchemy + Pydantic**
+- **선택 근거**: 8개 도메인의 복잡한 비즈니스 로직과 실시간 퀘스트 처리에 고성능이 필요했습니다. 또한 프론트엔드 팀원과의 API 인터페이스 정의를 명확하게 하기 위해 자동 OpenAPI 스키마 생성이 필요했습니다.
+- **구체적 활용**: Dependency Injection으로 계층 분리, Pydantic으로 타입 안전한 API 스키마 정의, SQLAlchemy의 aliased와 subquery를 활용한 복잡한 조인 최적화
+
+**Redis (전용 블랙리스트)**
+- **선택 근거**: JWT는 stateless 특성상 서버에서 토큰을 강제 무효화할 수 없는 문제가 있었습니다. 로그아웃된 토큰의 즉시 무효화를 위해 O(1) 성능의 인메모리 데이터베이스가 필요했습니다.
+- **구체적 활용**: 토큰 생성 시 JTI(JWT ID)를 부여하고 로그아웃 시 Redis Set에 저장, 인증 확인 시마다 블랙리스트 조회를 통한 즉시 무효화 처리
+
+**httpx 비동기 클라이언트**
+- **선택 근거**: SSAFY 금융 OpenAPI 호출 시 동기식 requests 라이브러리를 사용하면 외부 API 응답 대기 중 다른 사용자 요청이 블로킹되는 문제가 발생했습니다. 외부 API 장애와 무관하게 서비스 안정성을 확보해야 했습니다.
+- **구체적 활용**: 비동기 HTTP 호출로 외부 API와 내부 처리 분리, 에러 핸들링
+
+**Docker Compose (5개 서비스 오케스트레이션)**
+- **선택 근거**: 팀원 간 개발 환경 일관성 확보와 향후 클라우드 배포 확장성을 고려했습니다. 실제 해커톤 서비스는 systemd로 직접 배포했지만, 추후 마이크로서비스 확장을 위한 컨테이너화 전략을 수립했습니다.
+- **구체적 활용**: FastAPI, MySQL, Redis, Nginx, phpMyAdmin의 5개 서비스를 docker-compose.yml로 통합 관리, 개발 환경 즉시 구축 가능
+
+### **구현사항**
+
+**N+1 쿼리 최적화를 통한 복잡한 퀘스트 시스템**
+- **과제**: 모든 퀘스트와 사용자별 최신 진행상태를 동시에 조회할 때 N+1 쿼리 문제 발생
+- **해결**: SQLAlchemy의 `aliased`와 `subquery`를 조합하여 사용자별 최신 시도(attempt)를 서브쿼리로 구성한 후 `outerjoin`으로 단일 쿼리 처리
+
+**8가지 검증 방식 통합 퀘스트 인증**
+- GPS 위치 기반, 걸음 수, 링크 클릭, 파일 업로드, 결제 내역, 출석 체크, 자격증 인증, 대회 참여 등 8가지 검증 방식을 Enum 기반으로 타입 안전하게 통합 처리
+- 사용자별 진행 상태 실시간 추적 및 중복 완료 방지 로직 구현
+
+**SSAFY 금융 OpenAPI 완전 연동**
+- **복잡한 헤더 자동 생성**: 시간 기반 고유 거래번호, 기관 코드, API 키 등을 포함한 복잡한 요청 헤더를 자동 생성하는 헬퍼 함수 구현
+- **트랜잭션 기반 데이터 일관성**: 외부 API 호출과 내부 DB 저장을 하나의 트랜잭션으로 묶어 데이터 정합성 보장
+- **비동기 처리로 성능 확보**: httpx를 활용하여 금융 API 호출 중에도 다른 사용자 요청 처리 가능
+
+### **프로젝트 성과**
+
+- **계좌 개설 API 연동 성공률 98%** 달성
+- **SQLAlchemy 쿼리 최적화로 응답 속도 75% 향상** (1.2초 → 0.3초)
+- **8개 도메인 모듈 완전 독립 분리**로 팀원 간 병렬 개발 실현
+- **Docker 5개 서비스 설계**로 향후 마이크로서비스 확장 기반 구축
+- **systemd 기반 실제 서비스 배포** 완료
+
+### **문제 해결**
+
+**문제 1: JWT 로그아웃 후 토큰 재사용 보안 취약점**
+
+**오류 분석**: JWT는 서버에서 상태를 관리하지 않는 stateless 특성상 로그아웃 후에도 토큰 만료 전까지 계속 유효한 문제가 발생했습니다.
+
+**개선 과정**:
+1. 토큰 생성 시 고유 JTI(JWT ID) 부여
+2. Redis Set을 활용한 블랙리스트 저장소 구현
+3. 모든 인증 요청에서 O(1) 성능의 블랙리스트 조회 로직 추가
+
+**전후 비교**: 로그아웃된 토큰의 재사용이 완전 차단되어 보안 취약점 해결, JWT의 확장성은 그대로 유지
+
+**문제 2: 외부 금융 API 연동 시 시스템 블로킹**
+
+**오류 분석**: 동기식 HTTP 클라이언트 사용으로 외부 API 응답 대기 중 모든 사용자 요청이 블로킹되는 현상 발생
+
+**개선 과정**:
+1. requests 라이브러리에서 httpx 비동기 클라이언트로 교체
+2. 외부 API 호출과 내부 비즈니스 로직 분리
+3. 타임아웃 설정과 재시도 로직 추가
+
+**전후 비교**: 외부 API 장애와 무관하게 다른 사용자 요청 정상 처리, 전체 시스템 안정성 확보
+
+### **프로젝트 회고**
+
+**배운 점**
+- **인프라 설계의 전략적 사고**: Docker 컨테이너 설계는 했지만 실제 배포는 systemd로 진행하면서, 현재 요구사항과 미래 확장성을 모두 고려한 기술 선택의 중요성을 깨달았습니다.
+- **데이터베이스 쿼리 최적화**: SQLAlchemy ORM을 활용하면서도 성능을 위한 복잡한 서브쿼리 작성 능력을 기를 수 있었습니다.
+
+**아쉬웠던 부분과 개선 방안**
+- **테스트 코드 부족**: 2주라는 제한된 기간으로 인해 단위 테스트와 통합 테스트 작성이 미흡했습니다. 향후 프로젝트에서는 TDD 방법론을 적용하여 코드 품질을 높이고 싶습니다.
+- **모니터링 시스템 부재**: 실제 운영 시 성능 지표나 에러 로그 추적이 어려웠습니다. 다음에는 초기부터 로깅과 모니터링 시스템을 구축할 예정입니다.
+
+**깨달은 점**
+백엔드와 인프라를 전담하면서 **시스템 전체를 조감하는 시야**의 중요성을 깨달았습니다. 단순히 기능 구현이 아닌 확장성, 유지보수성, 성능을 종합적으로 고려한 아키텍처 설계 능력이 핵심임을 확인했습니다.
+
+---
+
 ## 🌤️WEATHEREVER
 
 ### **요약**
@@ -753,115 +868,6 @@
 
 ---
 
-## 🏆 쏠쏠한 퀘스트
-
-### **요약**
-💡 **"성장이 이자가 되고, 경쟁이 나눔이 되다"**
-
-**프로젝트 개요**: 대학생들의 금융 활동과 일상 습관을 게이미피케이션으로 연결하여 퀘스트 완료를 통해 경험치를 획득하고 실제 금융 혜택을 제공하는 핀테크 서비스입니다.
-
-**역할**: 4명 팀에서 백엔드 개발 총괄 및 인프라 담당으로 전체 시스템 아키텍처 설계와 구현을 주도했습니다.
-
-**프로젝트 시기**: 2025년 8월 (2주간 집중 개발)
-
-### **역할**
-
-**프로젝트 전체 인원**: 총 4명으로 구성된 팀 "금리복잡도 O(1)"에서 진행했습니다. 팀 구성은 PM 및 데이터베이스 1명, 백엔드 및 인프라 1명(본인), AI 추천시스템 개발자 1명, 프론트엔드 개발자 1명으로 이루어졌습니다.
-
-**나의 역할과 기여도**: **백엔드 개발 총괄 및 인프라 전담**으로서 전체 시스템의 기술적 기반을 단독으로 구축했습니다.
-
-- **전체 백엔드 아키텍처 설계**: FastAPI 기반으로 8개 도메인 모듈(auth, quests, users, universities, accounts, attendance, recommend, surveys)을 완전 독립적으로 분리하여 각각 router-schemas-service 패턴으로 구현
-- **복잡한 데이터베이스 설계**: SQLAlchemy를 활용하여 퀘스트-사용자-대학 간의 복잡한 관계형 모델링과 N+1 쿼리 최적화를 위한 서브쿼리 설계
-- **SSAFY 금융 OpenAPI 완전 연동**: 계좌 개설부터 이체 처리까지 전체 금융 프로세스 구현, httpx 비동기 클라이언트를 활용한 외부 API 호출 안정성 확보
-- **인프라 설계 및 구축**: Docker Compose를 활용한 5개 서비스 오케스트레이션 설계 (향후 확장 배포용), 실제 서비스는 systemd를 통한 서버 직접 배치
-- **보안 시스템 구현**: JWT + Redis 블랙리스트를 활용한 로그아웃 토큰 즉시 무효화, bcrypt 기반 패스워드 해싱
-
-*팀 내 기여도는 약 40%로, 전체 백엔드 시스템과 인프라를 단독으로 담당하며 프로젝트의 기술적 토대를 구축했습니다.*
-
-### **아키텍처**
-<img src="./아키텍처_최종수정.png" />
-
-
-
-### **사용 기술 및 선택 이유**
-
-**FastAPI + SQLAlchemy + Pydantic**
-- **선택 근거**: 8개 도메인의 복잡한 비즈니스 로직과 실시간 퀘스트 처리에 고성능이 필요했습니다. 또한 프론트엔드 팀원과의 API 인터페이스 정의를 명확하게 하기 위해 자동 OpenAPI 스키마 생성이 필요했습니다.
-- **구체적 활용**: Dependency Injection으로 계층 분리, Pydantic으로 타입 안전한 API 스키마 정의, SQLAlchemy의 aliased와 subquery를 활용한 복잡한 조인 최적화
-
-**Redis (전용 블랙리스트)**
-- **선택 근거**: JWT는 stateless 특성상 서버에서 토큰을 강제 무효화할 수 없는 문제가 있었습니다. 로그아웃된 토큰의 즉시 무효화를 위해 O(1) 성능의 인메모리 데이터베이스가 필요했습니다.
-- **구체적 활용**: 토큰 생성 시 JTI(JWT ID)를 부여하고 로그아웃 시 Redis Set에 저장, 인증 확인 시마다 블랙리스트 조회를 통한 즉시 무효화 처리
-
-**httpx 비동기 클라이언트**
-- **선택 근거**: SSAFY 금융 OpenAPI 호출 시 동기식 requests 라이브러리를 사용하면 외부 API 응답 대기 중 다른 사용자 요청이 블로킹되는 문제가 발생했습니다. 외부 API 장애와 무관하게 서비스 안정성을 확보해야 했습니다.
-- **구체적 활용**: 비동기 HTTP 호출로 외부 API와 내부 처리 분리, 에러 핸들링
-
-**Docker Compose (5개 서비스 오케스트레이션)**
-- **선택 근거**: 팀원 간 개발 환경 일관성 확보와 향후 클라우드 배포 확장성을 고려했습니다. 실제 해커톤 서비스는 systemd로 직접 배포했지만, 추후 마이크로서비스 확장을 위한 컨테이너화 전략을 수립했습니다.
-- **구체적 활용**: FastAPI, MySQL, Redis, Nginx, phpMyAdmin의 5개 서비스를 docker-compose.yml로 통합 관리, 개발 환경 즉시 구축 가능
-
-### **구현사항**
-
-**N+1 쿼리 최적화를 통한 복잡한 퀘스트 시스템**
-- **과제**: 모든 퀘스트와 사용자별 최신 진행상태를 동시에 조회할 때 N+1 쿼리 문제 발생
-- **해결**: SQLAlchemy의 `aliased`와 `subquery`를 조합하여 사용자별 최신 시도(attempt)를 서브쿼리로 구성한 후 `outerjoin`으로 단일 쿼리 처리
-
-**8가지 검증 방식 통합 퀘스트 인증**
-- GPS 위치 기반, 걸음 수, 링크 클릭, 파일 업로드, 결제 내역, 출석 체크, 자격증 인증, 대회 참여 등 8가지 검증 방식을 Enum 기반으로 타입 안전하게 통합 처리
-- 사용자별 진행 상태 실시간 추적 및 중복 완료 방지 로직 구현
-
-**SSAFY 금융 OpenAPI 완전 연동**
-- **복잡한 헤더 자동 생성**: 시간 기반 고유 거래번호, 기관 코드, API 키 등을 포함한 복잡한 요청 헤더를 자동 생성하는 헬퍼 함수 구현
-- **트랜잭션 기반 데이터 일관성**: 외부 API 호출과 내부 DB 저장을 하나의 트랜잭션으로 묶어 데이터 정합성 보장
-- **비동기 처리로 성능 확보**: httpx를 활용하여 금융 API 호출 중에도 다른 사용자 요청 처리 가능
-
-### **프로젝트 성과**
-
-- **계좌 개설 API 연동 성공률 98%** 달성
-- **SQLAlchemy 쿼리 최적화로 응답 속도 75% 향상** (1.2초 → 0.3초)
-- **8개 도메인 모듈 완전 독립 분리**로 팀원 간 병렬 개발 실현
-- **Docker 5개 서비스 설계**로 향후 마이크로서비스 확장 기반 구축
-- **systemd 기반 실제 서비스 배포** 완료
-
-### **문제 해결**
-
-**문제 1: JWT 로그아웃 후 토큰 재사용 보안 취약점**
-
-**오류 분석**: JWT는 서버에서 상태를 관리하지 않는 stateless 특성상 로그아웃 후에도 토큰 만료 전까지 계속 유효한 문제가 발생했습니다.
-
-**개선 과정**:
-1. 토큰 생성 시 고유 JTI(JWT ID) 부여
-2. Redis Set을 활용한 블랙리스트 저장소 구현
-3. 모든 인증 요청에서 O(1) 성능의 블랙리스트 조회 로직 추가
-
-**전후 비교**: 로그아웃된 토큰의 재사용이 완전 차단되어 보안 취약점 해결, JWT의 확장성은 그대로 유지
-
-**문제 2: 외부 금융 API 연동 시 시스템 블로킹**
-
-**오류 분석**: 동기식 HTTP 클라이언트 사용으로 외부 API 응답 대기 중 모든 사용자 요청이 블로킹되는 현상 발생
-
-**개선 과정**:
-1. requests 라이브러리에서 httpx 비동기 클라이언트로 교체
-2. 외부 API 호출과 내부 비즈니스 로직 분리
-3. 타임아웃 설정과 재시도 로직 추가
-
-**전후 비교**: 외부 API 장애와 무관하게 다른 사용자 요청 정상 처리, 전체 시스템 안정성 확보
-
-### **프로젝트 회고**
-
-**배운 점**
-- **인프라 설계의 전략적 사고**: Docker 컨테이너 설계는 했지만 실제 배포는 systemd로 진행하면서, 현재 요구사항과 미래 확장성을 모두 고려한 기술 선택의 중요성을 깨달았습니다.
-- **데이터베이스 쿼리 최적화**: SQLAlchemy ORM을 활용하면서도 성능을 위한 복잡한 서브쿼리 작성 능력을 기를 수 있었습니다.
-
-**아쉬웠던 부분과 개선 방안**
-- **테스트 코드 부족**: 2주라는 제한된 기간으로 인해 단위 테스트와 통합 테스트 작성이 미흡했습니다. 향후 프로젝트에서는 TDD 방법론을 적용하여 코드 품질을 높이고 싶습니다.
-- **모니터링 시스템 부재**: 실제 운영 시 성능 지표나 에러 로그 추적이 어려웠습니다. 다음에는 초기부터 로깅과 모니터링 시스템을 구축할 예정입니다.
-
-**깨달은 점**
-백엔드와 인프라를 전담하면서 **시스템 전체를 조감하는 시야**의 중요성을 깨달았습니다. 단순히 기능 구현이 아닌 확장성, 유지보수성, 성능을 종합적으로 고려한 아키텍처 설계 능력이 핵심임을 확인했습니다.
-
----
 
 ## ☕ fik@ssafy
 
@@ -990,7 +996,7 @@
 
 ## 📞 Contact
 
-**이메일**: imtaewon0123@gmail.com  
+**이메일**: imtaewon0123@gmail.com | xodnjs999@naver.com   
 **연락처**: +82 10-9297-8097  
 **GitHub**: [github.com/imtaewon](https://github.com/imtaewon)
 
